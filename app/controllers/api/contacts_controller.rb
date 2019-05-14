@@ -1,9 +1,13 @@
 class Api::ContactsController < ApplicationController
 
   def index
-    @contacts = Contact.all
-    search = params[:search]
-    info = params[:info]
+    if current_user
+        @contacts = Contact.all
+        search = params[:search]
+        info = params[:info]
+    else
+      render json: []
+    end
 
     # first_name_search = params[:first_name]
     # middle_name_search = params[:middle_name]
