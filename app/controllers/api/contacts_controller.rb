@@ -6,6 +6,12 @@ class Api::ContactsController < ApplicationController
             @contacts = current_user.contacts
             search = params[:search]
             info = params[:info]
+            group_name = params[:group]
+
+            if group_name
+              group = Group.find_by(name: group_name)
+              @contacts = group.contacts
+            end
 
             if search
               @contacts = @contacts.where("first_name iLIKE ? OR middle_name iLIKE ? OR last_name iLIKE ? OR email iLIKE ? OR phone_number iLIKE ? OR bio iLIKE ?", 

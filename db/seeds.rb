@@ -36,3 +36,13 @@
 #   contact.user_id = rand(1..101)
 #   contact.save
 # end
+
+# ContactGroup.create(contact_id: 24, group_id: 1)
+# ContactGroup.create(contact_id: 24, group_id: 3)
+# ContactGroup.create(contact_id: 71, group_id: 3)
+# ContactGroup.create(contact_id: 71, group_id: 2)
+# ContactGroup.create(contact_id: 172, group_id: 9)
+# ContactGroup.create(contact_id: 472, group_id: 1)
+# ContactGroup.create(contact_id: 472, group_id: 2)
+# ContactGroup.create(contact_id: 472, group_id: 3)
+# ContactGroup.create(contact_id: 875, group_id: 10)

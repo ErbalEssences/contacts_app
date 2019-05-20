@@ -6,6 +6,8 @@ class Contact < ApplicationRecord
   validates :email, format: {with: /\A\w+[@]\w{3,}[.]\w{2,}\z/, message: "must be a valid email format"}
 
   belongs_to :user
+  has_many :contact_groups
+  has_many :groups, through: :contact_groups
 
   def friendly_updated_at
     updated_at.strftime("%b %d, %Y")
